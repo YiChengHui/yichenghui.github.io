@@ -1,0 +1,456 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h2 id="css3">CSS3</h2>
+<hr>
+<h3 id="ide-">IDE快速生成文本</h3>
+<pre><code>lorem1000 + tab键 
+</code></pre><hr>
+<h3 id="-">选择器</h3>
+<p><code>兄弟选择器</code></p>
+<pre><code>ul&gt;li {}
+/*代表找到.two下一个兄弟li标签，只有下一个兄弟元素确实是li标签才命中  */
+</code></pre><p><code>属性选择器</code></p>
+<pre><code>li[class] {
+        background-color: orange;
+}
+
+/*属性等于某个值  */
+li[class=&quot;three&quot;] {
+    color: red;
+}
+
+/*属性以什么开头  */
+li[class^=&#39;t&#39;] {
+    font-weight: 900;
+}
+
+/*属性以什么结尾  */
+li[class$=&quot;e&quot;] {
+    border: 1px solid black;
+}
+
+/*包含o  */
+li[class*=&quot;o&quot;] {
+    font-size: 80px;
+}
+</code></pre><p><code>伪类选择器</code></p>
+<pre><code>    /*        
+    就代表找到第一个li标签
+    但是这个li标签也必须是第一个子元素        
+    */
+    li:first-child {
+        color: red;
+    }
+
+    /*找到最后一个li标签，但是这个li标签也必须是最后一个子元素  */
+    li:last-child {
+        color: blue;
+    }
+
+    /*找到第一个子元素的li标签，一定要是第一个，如果在父元素中它不是第一个，那么就不会命中  */
+    li:nth-child(1) {
+        background-color: orange;
+    }
+
+    /*n 可以理解为是从0-最大值的一个数
+        如果n从0开始，2，3,4,5 经过测试果然是从0开始
+        如果n从1开始，3,4,5
+    */
+    li:nth-child(n+2) {
+        border: 1px solid black;
+        font-size: 80px;
+    }
+</code></pre><p><code>xx-of-type()</code></p>
+<pre><code>    /* 
+    这一种必须保证它也在父元素中第一个子元素
+    li:first-child {
+        color: red;
+    } */
+
+    /*只要保证是这种类型的一个就行了  */
+    li:first-of-type {
+
+        color: red;
+    }
+
+    /*找到这种类型的最后一个  */
+    li:last-of-type {
+        color: blue;
+    }
+
+    /*找到同类型中的第一个，传入2，找第二个  */
+    li:nth-of-type(1) {
+        font-size: 40px;
+    }
+</code></pre><p><code>伪类选择器之第一个字符  第一行</code></p>
+<pre><code>    /*命中第一个字符  */
+    /*有些国家从右往左阅读的，那么第一个字符在右边，例如：阿拉伯国家  */
+
+    p::first-letter {
+        color: blue;
+        font-size: 40px;
+    }
+
+    /*命中第一行，不管屏幕多宽都是第一行  */
+    p::first-line {
+        background-color: red;
+    }
+
+    /*命中选中的那行  */
+    p::selection {
+        background-color: orange;
+    }     
+</code></pre><h3 id="-">伪元素占位符</h3>
+<pre><code>/*
+实验室中的属性，试验中属性，测试中的属性
+已经有这个东西了，但是还没正式成为标准
+遇到这种属性，浏览器支持，但是需要写浏览器标识才行
+
+也就是说以后遇到试验中的属性，必须加浏览器前缀标识      */
+
+/*webkit谷歌内核，谷歌的前缀标识  */
+ ::-webkit-input-placeholder {
+    color: red;
+}
+
+::-moz-placeholder {
+    color: blue;
+}
+
+:-ms-input-placeholder {
+    color: hotpink;
+}
+
+/* input::placeholder {
+    color: red;
+} */
+
+/* ::placeholder {
+    color: red;
+} */           
+</code></pre><hr>
+<h3 id="transition-">transition过渡动画</h3>
+<pre><code>.box {
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+        background-color: red;
+
+        &lt;!-- transition: width 5s; 
+        transition: all 5s steps(5); 
+        参数1：参与过渡的属性，all,代表所有属性都参与，也可以传具体的指定的属性 
+        参数2：过渡的动画时间 
+        参数3：动画效果，其他的一般不用，steps(n) 分成n步来完成  
+        参数4：过度要延迟几秒执行   --&gt;
+        transition: all 1s 1s;
+    }
+</code></pre><hr>
+<h3 id="css3-background-">CSS3中background新增的属性</h3>
+<pre><code>.box {
+        /*  参数1：选择图片的的路径
+            参数2：是否平铺,新增了round，把图片缩放到盒子大小
+                    如果盒子本身比图片大，那么就默认平铺了
+            参数3：选择图片的定位
+                    left：图片左边对齐盒子的左边
+                    right:图片右边对齐盒子的右边
+                    top:图片上边对齐盒子的上边
+                    bottom:图片下边对齐盒子的下边
+
+                    参数3定位后面可以加一个/后面再加指定这个图片的大小
+
+                    cover和contain，都会进行按比例缩放，图片不变形
+                    cover：只要有一边缩放到盒子里面了，就会停止缩放
+                    contain：必须保证两边都缩放到盒子里了，然后才会停止缩放 */
+        background: url(&#39;img/lzl.jpg&#39;) no-repeat center/contain;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+</code></pre><hr>
+<h3 id="css3-">CSS3图片边框</h3>
+<p><code>但是如果用它一定要记得，加border</code></p>
+<pre><code>border-image:设置图片边框 它是一个复合属性，后面还可以写对这张图片的切割线
+顺序分别是上，右，下，左，如果四个值都一样，就只写一个就行了
+
+此时border大小就是图片框的大小        
+
+border-image: url(&#39;img/border-oil.jpg&#39;) 75; */
+border-image-source: url(&#39;img/border-oil.jpg&#39;);
+border-image-slice: 75;
+margin: 100px auto;
+
+background: url(&#39;img/ly.jpg&#39;) no-repeat center/cover;
+</code></pre><hr>
+<h3 id="css3-">CSS3线性渐变</h3>
+<p><code>background: linear-gradient</code></p>
+<pre><code>/*如果要有线性渐变的效果，其实就相当于给一个盒子的背景加背景图片 */
+/*
+参数1：颜色过渡的方向
+    to left   从右到左
+    to right  从左到右
+    to top    从下到上
+    to bottom 从上到下
+
+还可以传入角度，0度是下面，如果传0度，就是从下到上,顺时针旋转
+
+参数2：颜色列表，至少需要2个颜色,第一个颜色是开始的颜色，具体颜色摆在哪个位置，就看你的一个参数传入的方向，后面可以接N多个颜色
+
+所有颜色默认都是从开始的地方开始
+
+第一个颜色如果给一个百分比，代表在什么位置结束
+
+后面每个颜色如果给一个百分比，代表在什么位置开始
+如果希望后面的颜色给一个结束，那么就必须再写一个同样的颜色，然后写一个百分比代表这个颜色什么时候结束*/
+/* background: linear-gradient(0deg, orange, red, blue, green, yellow) no-repeat; */
+
+background: linear-gradient(to right, orange 30%, red 30%, red 60%, blue 60%); 
+</code></pre><hr>
+<h3 id="-">精灵图</h3>
+<pre><code>background: url(&#39;img/sprites.png&#39;) no-repeat bottom right;
+/* background-image: url(&#39;img/sprites.png&#39;); */
+/*跟元素的定位，没有半毛钱关系，这只是指移动背景图片  */
+/* background-position-x: -80px;
+background-position-y: -140px; */
+</code></pre><hr>
+<h3 id="css3-">CSS3经向渐变</h3>
+<p><code>径向渐变说人话：就是一圈一圈的渐变</code></p>
+<pre><code>.sun {
+    width: 300px;
+    height: 300px;
+    margin: 100px auto;
+    border-radius: 50%;
+
+    /*
+        参数1：圆心的位置以及圆的大小
+        参数2：颜色列表，至少需要2个颜色
+    */
+    background: radial-gradient(235px 150px at center, red, orange);
+
+    /*参数1：水平偏移，参数2，垂直偏移，参数3，模糊度，参数4阴影宽度，参数5阴影颜色  */
+    box-shadow: 0px 0px 40px 20px orange;
+}
+</code></pre><hr>
+<h3 id="css3-animation">CSS3 animation</h3>
+<pre><code>用animation就没必要写transition了，因为它自带了动画效果
+
+animation-name:动画的名字
+
+animation-duration:动画的持续时间
+
+animation-delay：动画的延迟时间
+
+animation-timing-function：动画效果
+
+animation-iteration-count:动画的次数可以传infinite，代表无限
+
+下两个不常用
+
+    反转效果，先瞬间变成动画结束的样子，再以动画慢慢复原
+    animation-direction: reverse; 
+    动画完成后要不要以动画的结束样子显示（不恢复原样）
+    animation-fill-mode: forwards;
+</code></pre><p><code>实际应用</code></p>
+<pre><code>&lt;style&gt;
+    .box {
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+        background: red;
+
+
+        /*动画名  */
+        animation-name: scaleBox;
+
+        /*动画时间  */
+        animation-duration: 1s;
+
+        /*延迟执行  */
+        /* animation-delay: 2s; */
+        /*设置动画次数.可以给具体的次数，也可以写 infinite，如果写infinite就代表无限执行动画 */
+        animation-iteration-count: 1;
+
+        /*设置动画效果  */
+        /* animation-timing-function: steps(2); */
+        /*这属性不常用 如果写reverse，它会先瞬间变成动画完成后的样子，然后以动画效果复原  */
+        /* animation-direction: reverse; */
+        /*不常用 动画完成后把盒子变成动画后的状态（不恢复原样）  */
+        /* animation-fill-mode: forwards; */
+    }
+    /*固定写法
+        @keyframes  动画名{
+            from{} 从什么状态开始动画
+            to{}   用动画变成什么样子
+        }
+    */
+
+    @keyframes scaleBox {
+        /*从什么状态开始动画。如果不写就是以元素默认的形态开始  */
+        /*如果你这里写的值比动画最终效果要大，那么就是从你这个大的值用动画效果来缩小，如果你这里写的值比最终动画效果要小，那么就是以这种状态放大到动画效果最终结果  */
+        from {
+            /* 
+            width: 50px;
+            height: 50px; */
+        }
+
+        /*动画要变成什么样子  */
+        to {
+            transform: scale(1.2);
+        }
+    }
+    /* .box:hover {
+        transform: scale(1.2);
+    } */
+&lt;/style&gt;
+</code></pre><hr>
+<h3 id="css3-3d-">CSS3 3D的透视效果中的视点</h3>
+<p><code>transform:perspective(像素距离)</code></p>
+<p><code>给一个视点距离，相当于是给了一个镜头拍一个物体的距离,如果给了视点，例如300px，那么相当于在距离屏幕300px的位置给你模拟出一个相机，拍下某个元素，拍出来是什么效果，就给你把这种效果展示到屏幕上,验证perspective给的距离就是模拟的视觉距离</code></p>
+<pre><code>生活中视觉效果：
+    近大远小
+
+为什么我们默认看起来效果不明显
+
+因为没有给它一个视觉的距离，这个视觉的距离就叫视点（镜头位置）
+
+perspective(300px)
+
+
+如果要有3D的透视效果，就需要给transform加perspective(距离，单位是px)
+
+值越大，效果越不明显，值越小效果越明显    
+
+如果给每个元素加视点，相当于每个元素都有个镜头拍摄它的形态
+
+而如果给父元素加视点，那么就只是一个镜头来拍元素的形态，那样的话，两边的元素虽然也是旋转90度，但对于这个镜头来说，看起来就像斜着的
+
+如果视点加在父元素上，不要用transform:perspective
+
+而应该用：perspective:距离
+</code></pre><hr>
+<h3 id="css3-flex-">CSS3伸缩布局（flex、弹性盒子）</h3>
+<p><code>display: flex;</code></p>
+<pre><code>ul {
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+    padding: 0;
+    list-style: none;
+
+    /*如果给ul加的伸缩布局，其实伸缩布局是作用于它的子元素上  */
+    display: flex;
+
+    /*设置在主轴方向上的排列方式
+        flex-start; 默认是 从左边开始（起点）
+        flex-end 从右边开始排列（右对齐）
+        space-around：元素和元素之间有间距，并且间距相等，开头和结束也有间距，两边的间距是元素之间间距的一半
+        space-between: 元素和元素之间有间距，并且间距相等，但是开头和结束没有间距 */
+        justify-content: space-around;
+
+
+    /*统一设置每个元素在副轴上的排列
+        flex-start：统一设置所有元素在副轴的开头
+        center：统一设置所有元素在副轴的中间
+        flex-end：统一设置所有元素在副轴的结尾
+        */
+        align-items: flex-end;
+
+    /*设置哪个是主轴
+            row：默认值，代表水平方向那根是主轴
+            column：代表垂直方向为主轴
+        */
+        flex-direction: column;
+    }
+
+    li {
+        width: 150px;
+        height: 150px;
+        background: yellowgreen;
+    }
+</code></pre><hr>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

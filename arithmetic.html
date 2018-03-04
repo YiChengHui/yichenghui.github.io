@@ -1,0 +1,713 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>js算法、业务逻辑 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="interview.html" />
+    
+    
+    <link rel="prev" href="webpack.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="JavaScript.html">
+            
+                <a href="JavaScript.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="HTML5.html">
+            
+                <a href="HTML5.html">
+            
+                    
+                    HTML5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="CSS3.html">
+            
+                <a href="CSS3.html">
+            
+                    
+                    CSS3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Ajax.html">
+            
+                <a href="Ajax.html">
+            
+                    
+                    Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="canvas.html">
+            
+                <a href="canvas.html">
+            
+                    
+                    Canvas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="node.html">
+            
+                <a href="node.html">
+            
+                    
+                    node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="angular.html">
+            
+                <a href="angular.html">
+            
+                    
+                    angular.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="vue.html">
+            
+                <a href="vue.html">
+            
+                    
+                    Vue.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="webpack.html">
+            
+                <a href="webpack.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="arithmetic.html">
+            
+                <a href="arithmetic.html">
+            
+                    
+                    js算法、业务逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="interview.html">
+            
+                <a href="interview.html">
+            
+                    
+                    高概率面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >js算法、业务逻辑</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="javascript&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3001;&#x7B97;&#x6CD5;"><center>JavaScript&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3001;&#x7B97;&#x6CD5;</center></h2>
+<h3 id="&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x6570;&#x662F;&#x5426;&#x4E3A;&#x56DE;&#x6587;&#x6570;"><center>&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x6570;&#x662F;&#x5426;&#x4E3A;&#x56DE;&#x6587;&#x6570;</center></h3>
+<pre><code>function checkPalindrom(str) {
+    return str == str.split(&quot;&quot;).reverse().join(&quot;&quot;);
+}
+console.log(checkPalindrom(&quot;abcba&quot;));
+</code></pre><h3 id="&#x53BB;&#x6389;&#x4E00;&#x7EC4;&#x6574;&#x578B;&#x6570;&#x7EC4;&#x91CD;&#x590D;&#x7684;&#x503C;"><center>&#x53BB;&#x6389;&#x4E00;&#x7EC4;&#x6574;&#x578B;&#x6570;&#x7EC4;&#x91CD;&#x590D;&#x7684;&#x503C;</center></h3>
+<pre><code>let arr = [1, 13, 24, 11, 11, 14, 1, 2];
+
+function unique(arr) {
+    let hashTable = {},
+        data = [],
+        i = 0,
+        l = arr.length;
+    for(; i &lt; l; i++) {
+        if(!hashTable[arr[i]]) {
+            hashTable[arr[i]] = true;
+            data.push(arr[i]);
+        }
+    }
+    return data;
+}
+
+console.log(unique(arr));
+</code></pre><h3 id="&#x7EDF;&#x8BA1;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x51FA;&#x73B0;&#x6700;&#x591A;&#x7684;&#x5B57;&#x6BCD;"><center>&#x7EDF;&#x8BA1;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x51FA;&#x73B0;&#x6700;&#x591A;&#x7684;&#x5B57;&#x6BCD;</center></h3>
+<pre><code>var str = &quot;abaasdffggghhjjkkgfddsssss3444343&quot;;
+
+function getMaxTimeStr(str) {
+    var strObj = {};
+
+    if(str.length == 1) {
+        return {str: 1};
+    }
+
+    for(var i = 0; i &lt; str.length; i++) {
+        if(!strObj[str[i]]) {
+            strObj[str[i]] = 1;
+        } else {
+            strObj[str[i]]++;
+        }
+    }
+
+    var max = 1;
+    var maxVal = &quot;&quot;;
+
+    for(var k in strObj) {
+        if(strObj[k] &gt; max) {
+            max = strObj[k];
+            maxVal = k;
+        }
+    }
+
+    return {maxVal: max};
+}
+</code></pre><h3 id="&#x968F;&#x673A;&#x751F;&#x6210;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x5B57;&#x7B26;&#x4E32;"><center>&#x968F;&#x673A;&#x751F;&#x6210;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x5B57;&#x7B26;&#x4E32;</center></h3>
+<pre><code>function randomString(n) {
+let str = &quot;abcdefghijklmnopqrstuvwxyz0123456789&quot;;
+let i = 0,
+    tmp = &apos;&apos;,
+    l = str.length;
+
+for(; i &lt; n; i++) {
+    tmp += str.charAt(Math.floor(Math.random() * l));
+}
+
+    return tmp;
+}
+
+console.log(randomString(1200));
+</code></pre><h3 id="&#x4E0D;&#x5199;documentgetelementbyid&#x76F4;&#x63A5;&#x7528;id"><center>&#x4E0D;&#x5199;documentgetELementById&#x76F4;&#x63A5;&#x7528;id</center></h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #f80;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;dv&quot;&gt;&lt;/div&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        dv.style.backgroundColor = &quot;#f20&quot;;
+        console.dir(dv);
+        console.log(dv.parentNode);
+        console.log(typeof dv);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;    
+</code></pre><h3 id="&#x6570;&#x7EC4;&#x53BB;&#x91CD;"><center>&#x6570;&#x7EC4;&#x53BB;&#x91CD;</center></h3>
+<pre><code>let arr = [1, 13, 24, 1, 11, 11, 1, 14, 2];
+
+const unique = function(arr) {
+    let flag,
+        data = [],
+        i = 0,
+        l = arr.length;
+
+    for(; i &lt; l; i++) {
+        flag = true;
+        for(let j = 0; j &lt; data.length; j++) {
+            if(arr[i] === data[j]) {
+                flag = false;
+                break;
+            }
+        }
+        if(flag) {
+            data[data.length] = arr[i];
+        }
+    }
+    return data;
+}
+
+console.log(unique(arr));
+</code></pre><h3 id="&#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6570;&#x5217;"><center>&#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6570;&#x5217;</center></h3>
+<pre><code>const fib = function (num) {
+    return num &lt;= 2 ? 1 : fib(num - 1) + fib(num - 2);
+}
+
+fib(50);
+
+// &#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6570;&#x5217;&#x7684;&#x9012;&#x5F52;&#x4F18;&#x5316;
+const fib = function() {
+    let cache = [];
+
+    return function (n) {
+        if(cache[n] !== undefined) {
+            return cache[n];
+        }
+
+        if(n === 1 || n === 2) {
+            cache[n] = 1;
+            return 1;
+        }
+
+        let tempNum = arguments.callee(n - 1) + arguments.callee(n - 2);
+        cache[n]  = tempNum;
+
+        return tempNum;
+    };
+};
+
+const fn = fib();
+let num = fn(1476);
+
+console.log(num);    
+</code></pre><h3 id="&#x5192;&#x6CE1;&#x6392;&#x5E8F;"><center>&#x5192;&#x6CE1;&#x6392;&#x5E8F;</center></h3>
+<pre><code>function sortBubble(array) {
+var len = array.length, i, j, tmp;
+for (i = len - 1; i &gt;= 1; i--) {
+        for (j = 0; j &lt; len - i - 1; j++) {
+            if(array[j] &lt; array[j + 1]) {
+                tmp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = tmp;
+            }
+        }
+    }
+    return array;
+}
+
+function bubbleSort(arr) {  
+    for(let i = 0,l=arr.length;i&lt;l-1;i++) {        
+        for(let j = i+1;j&lt;l;j++) { 
+            if(arr[i]&gt;arr[j]) {
+                    let tem = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tem;
+                }
+        }
+    }    
+    return arr;
+}    
+</code></pre><h3 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><center>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</center></h3>
+<pre><code>function sortQuick(array) {
+    var low = 0, high = array.length - 1;
+    var sort = function (low, high) {
+        if (low == high) {
+            return;
+        }
+        var key = array[low];
+        var tmplow = low;
+        var tmphigh = high;
+        while (low &lt; high) {
+            while (low &lt; high &amp;&amp; key &lt;= array[high]) {
+                --high;
+            }
+            array[low] = array[high];
+            while (low &lt; high &amp;&amp; array[low] &lt;= key) {
+                ++low;
+            }
+            array[high] = array[low];
+            if (low == tmplow) {
+                sort(++low, tmphigh);
+                return;
+            }
+        }
+        ;
+        array[low] = key;
+        sort(tmplow, low - 1);
+        sort(high + 1, tmphigh);
+    };
+    sort(low, high);
+    sort();
+    return array;
+}
+</code></pre><h3 id="&#x63D2;&#x5165;&#x6392;&#x5E8F;"><center>&#x63D2;&#x5165;&#x6392;&#x5E8F;</center></h3>
+<pre><code>function sortInsert(array) {
+    var i = 1, j, len = array.length, key;
+    for (; i &lt; len; i++) {
+        j = i;
+        key = array[j];
+        while (--j &gt; -1) {
+            if (array[j] &gt; key) {
+                array[j + 1] = array[j];
+            }
+            else {
+                break;
+            }
+        }
+        array[j + 1] = key;
+    }
+    return array;
+}    
+</code></pre><h3 id="&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x662F;&#x5F53;&#x5E74;&#x7684;&#x7B2C;&#x51E0;&#x5929;"><center>&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x662F;&#x5F53;&#x5E74;&#x7684;&#x7B2C;&#x51E0;&#x5929;</center></h3>
+<pre><code>function countDates(year, mon, day) {
+    let calc = day;
+    let month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    (year % 4 === 0 &amp;&amp; year % 100 !== 0) || year % 400 === 0 ? month[1] = 29 : month[1] = 28;
+
+    for(let i = 0; i &lt; mon - 1; i++) {
+        calc += month[i];
+    }
+
+    return calc;
+}
+
+console.log(countDates(2017, 1, 18));
+</code></pre><h3 id="&#x5C06;&#x5B57;&#x7B26;&#x4E32;get-element-by-id&#x6539;&#x4E3A;&#x9A7C;&#x5CF0;&#x547D;&#x540D;"><center>&#x5C06;&#x5B57;&#x7B26;&#x4E32;get-element-by-id&#x6539;&#x4E3A;&#x9A7C;&#x5CF0;&#x547D;&#x540D;</center></h3>
+<pre><code>var foo = &quot;get-element-by-id&quot;;
+var arr = foo.split(&quot;-&quot;);
+
+arr.forEach(function(item, index) {
+    arr[index] = index &gt; 0 ? item.replace(item.charAt(0), item.charAt(0).toUpperCase()) : arr[index];
+});
+
+var lastStr = arr.join(&quot;&quot;);
+
+console.log(lastStr);
+</code></pre><h3 id="&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x7684;&#x5047;&#x503C;&#x6BD4;&#x8F83;"><center>&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x7684;&#x5047;&#x503C;&#x6BD4;&#x8F83;</center></h3>
+<pre><code>console.log(&quot;0&quot; == null);
+console.log(&quot;0&quot; == undefined);
+console.log(&quot;0&quot; == false);    
+console.log(&quot;0&quot; == NaN);
+&#x7ED3;&#x679C;&#x4F9D;&#x6B21;&#x4E3A;&#xFF1A;
+false  false  true  false
+
+console.log(&quot;0&quot; == 0);
+console.log(&quot;0&quot; == &quot;&quot;);
+console.log(0 == null);
+console.log(0 == undefined);
+&#x7ED3;&#x679C;&#x4F9D;&#x6B21;&#x4E3A;
+true    false    false    false    
+
+console.log(0 == NaN);
+console.log(0 == []);
+console.log(0 == {});
+console.log(false == null);
+&#x7ED3;&#x679C;&#x4F9D;&#x6B21;&#x4E3A;&#xFF1A;
+false    true    false    false
+
+console.log(false == undefined);
+console.log(false == NaN);
+console.log(false == 0);
+console.log(false == &quot;&quot;);
+&#x7ED3;&#x679C;&#x4F9D;&#x6B21;&#x4E3A;&#xFF1A;
+false    false    true    true
+
+console.log(false == []);
+console.log(false == {});
+console.log(&quot;&quot; == null);
+console.log(&quot;&quot; == undefined);
+&#x7ED3;&#x679C;&#x4F9D;&#x6B21;&#x4E3A;&#xFF1A;
+true    false    false    false
+
+console.log(&quot;&quot; == NaN);
+console.log(&quot;&quot; == 0);
+console.log(&quot;&quot; == []);
+console.log(&quot;&quot; == {});         
+&#x7ED3;&#x679C;&#x4F9D;&#x6B21;&#x4E3A;&#xFF1A;
+false    true    true    false
+</code></pre><h3 id="angular1-&#x5C01;&#x88C5;jsonp&#x8DE8;&#x57DF;"><center>angular1 &#x5C01;&#x88C5;jsonp&#x8DE8;&#x57DF;</center></h3>
+<pre><code>angular.module(&apos;demo.jsonp&apos;, [])
+.service(&apos;jsonpSrv&apos;, [&apos;$window&apos;, function ($window) {
+    this.jsonp = function (url, params, callback) {
+        var arr = [url];
+        arr.push(&apos;?&apos;);
+        for(var k in params) {
+            arr.push(k + &apos;=&apos; + params[k] + &apos;&amp;&apos;);
+        }
+        var cName = &apos;myCallback&apos; + Date().now();
+        arr.push(&apos;callback=&apos; + cName);
+        var doc = $window.document;
+        var script = doc.createElement(&apos;script&apos;);
+        script.src = arr.join(&apos;&apos;);
+        doc.body.appendChild(script);
+        $window[cName] = function (data) {
+            callback(data);
+            doc.body.removeChild(script);
+            delete $window[cName];
+        }
+    }
+}]);
+</code></pre><h3 id="&#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6240;&#x6709;o&#x51FA;&#x73B0;&#x7684;&#x4F4D;&#x7F6E;"><center>&#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x6240;&#x6709;o&#x51FA;&#x73B0;&#x7684;&#x4F4D;&#x7F6E;</center></h3>
+<pre><code>let str = &quot;abcoefoxyozzopp&quot;;
+
+let start = 0;
+
+while(str.indexOf(&quot;o&quot;, start) &gt; 0) {
+    console.log(start = str.indexOf(&quot;o&quot;, start));
+    start += 1;
+}    
+</code></pre><h3 id="&#x628A;&#x5B57;&#x7B26;&#x4E32;abcoefoxyozzopp&#x4E2D;&#x6240;&#x6709;&#x7684;o&#x66FF;&#x6362;&#x6210;"><center>&#x628A;&#x5B57;&#x7B26;&#x4E32;abcoefoxyozzopp&#x4E2D;&#x6240;&#x6709;&#x7684;o&#x66FF;&#x6362;&#x6210;!</center></h3>
+<pre><code>let str = &quot;abcoefoxyozzopp&quot;;
+
+// str = str.replace(/o/g, &quot;!&quot;);
+
+let start = 0;
+
+while(str.indexOf(&quot;o&quot;, start) &gt; 0) {
+    start = str.indexOf(&quot;o&quot;, start);
+    str = str.replace(&quot;o&quot;, &quot;!&quot;);
+    start += 1;
+}
+
+console.log(str);    
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="webpack.html" class="navigation navigation-prev " aria-label="Previous page: webpack">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="interview.html" class="navigation navigation-next " aria-label="Next page: 高概率面试题">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"js算法、业务逻辑","level":"1.11","depth":1,"next":{"title":"高概率面试题","level":"1.12","depth":1,"path":"interview.md","ref":"./interview.md","articles":[]},"previous":{"title":"webpack","level":"1.10","depth":1,"path":"webpack.md","ref":"./webpack.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"arithmetic.md","mtime":"2017-10-23T13:16:52.804Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-25T13:49:37.515Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

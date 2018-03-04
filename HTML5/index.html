@@ -1,0 +1,433 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h2 id="html5-css3">HTML5</h2>
+<hr>
+<h3 id="-h5">使用条件式注释兼容H5</h3>
+<p><code>因为这个第三方框架也只是IE8以后才需要，所以也来一个条件编译命令，这样的话如果用户是新式浏览器，那么就不会导入，就能够节省流量，让网站打开的更快</code></p>
+<pre><code>&lt;!--[if lte IE 8]&gt;
+    &lt;script src=&quot;js/html5shiv.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre><hr>
+<h3 id="h5-">H5语义化标签</h3>
+<pre><code>header标签 ：头部区域  
+    nav标签：导航区域
+
+main标签 ： 主体区域
+    section标签  主体里的某一个分组
+        aside标签  分组里的侧边内容
+        article标签 分组里的正文
+
+footer标签 ： 页尾区域
+</code></pre><hr>
+<h3 id="h5-">H5自定义属性</h3>
+<p><code>h5中规范：自定义属性的写法为：data-xxx   xxx就是属性名</code></p>
+<pre><code>h5提供的找自定义属性的方法：dataset可以获取这些所有的自定义属性，并且是对象类型
+取值：.dataset[&quot;age&quot;] 或 .dataset.age
+如果想用dataset来取自定义属性，那么必须要求这些自定义属性前面有data-
+</code></pre><p>获取自定义属性的值：
+    从<code>&lt;div data-name=&#39;jack&#39;&gt;&lt;/div&gt;</code>获取</p>
+<pre><code>1.用data-格式写的属性在dataset里取的时候，不需要加data-
+因为它会自动把data-去掉,并且如果后面还有-，它会去掉-，并且把-后面的那个单词首字母大写   
+divDom.dataset[&#39;name&#39;]
+
+2.document.getElementById(&#39;id&#39;).getAttribute(&#39;data-name&#39;)
+</code></pre><hr>
+<h3 id="h5-">H5中视频、音频标签</h3>
+<pre><code>以前都是用flash来播放视频的
+但是flash有缺点：卡，占用资源大，发热
+移动端已经不支持flash了，比如iOS
+移动互联网兴起后flash就落幕了
+
+现在国外几乎所有的视频网站都不用flash播放，用的是h5新增的播放频的标签
+
+video和audio标签在移动端支持的非常好
+
+在IE8以前的老版本里是不支持的，用flash播放
+有框架：video.js  它核心也是用flash来播放的
+
+国内：pc端用的是flash，移动端用的是h5
+
+h5标签缺点：
+    右键可以直接另存为
+    屏蔽广告技术上实现比较简单     
+</code></pre><p><code>video的source标签</code></p>
+<pre><code>如果video标签里面写source标签，代表它会从上往下来寻找播放
+先找第一个source看能不能播放，能播放就播放它，不能播放就找下一个来试试能不能播放
+
+如果在video里写source会从上往下尝试播放，如果都不能播放就会显示你在最后写的文字，那么能播放就不显示了 
+&lt;video controls autoplay&gt;
+    &lt;source src=&quot;video/rabbit.ogg&quot;&gt;&lt;/source&gt;
+    &lt;source src=&quot;video/movie01.mp4&quot;&gt;&lt;/source&gt;
+    请下载最新浏览器
+    &lt;a href=&quot;#&quot;&gt;点我下载&lt;/a&gt;
+&lt;/video&gt;  
+</code></pre><hr>
+<h3 id="h5-input-">H5新增的input取值</h3>
+<p><code>取input里的值，一般都是value属性</code></p>
+<pre><code>&lt;form action=&quot;#&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;请输入账号&lt;/label&gt;
+    &lt;input type=&quot;text&quot;&gt;
+
+    &lt;label for=&quot;&quot;&gt;请输入颜色&lt;/label&gt;
+    &lt;!--可以弹出选择器  --&gt;
+    &lt;input id=&#39;color&#39; type=&quot;color&quot;&gt;
+    &lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;点我&quot;&gt;
+
+
+    &lt;label for=&quot;&quot;&gt;请输入年龄&lt;/label&gt;
+    &lt;!--特点：限制只能输入数字，并且提供增加和减小两个小按钮  --&gt;
+    &lt;input type=&quot;number&quot;&gt;
+
+    &lt;label for=&quot;&quot;&gt;请输入电话&lt;/label&gt;
+    &lt;!--特点：移动端可以看出差别，就是弹出9宫格的数字  --&gt;
+    &lt;input type=&quot;tel&quot;&gt;
+
+    &lt;label for=&quot;&quot;&gt;请输入生日&lt;/label&gt;
+    &lt;!--特点：只能输入日期并且会弹出日期选择器给你选择日期  --&gt;
+    &lt;input type=&quot;date&quot;&gt;
+
+    &lt;label for=&quot;&quot;&gt;请输入邮箱&lt;/label&gt;
+    &lt;!--特点：它自带了邮箱格式是否正确的验证  --&gt;
+    &lt;input type=&quot;email&quot;&gt;
+
+    &lt;label for=&quot;&quot;&gt;请输入网址&lt;/label&gt;
+    &lt;!--特点：自带了网址格式是否正确的验证  --&gt;
+    &lt;input type=&quot;url&quot;&gt;
+
+    &lt;label for=&quot;&quot;&gt;请上传一个文件&lt;/label&gt;
+    &lt;!--特点：上传文件  --&gt;
+    &lt;input type=&quot;file&quot;&gt;
+&lt;/form&gt;    
+</code></pre><p>input标签新属性</p>
+<pre><code>required：代表它所在的input必须要有内容，否则提交时不成功
+
+autofocus:代表它所在的input自动得到焦点
+
+multiple:主要用在input type=file中，代表可以选择多个文件
+</code></pre><hr>
+<h3 id="h5-">H5默认提供的表单验证方法和提示</h3>
+<p><code>dom对象的setCustomValidity方法</code></p>
+<pre><code>&lt;form action=&quot;#&quot;&gt;
+    &lt;label for=&quot;&quot;&gt;电话：&lt;/label&gt;
+    &lt;input type=&quot;tel&quot; required pattern=&quot;\d{11}&quot;&gt;
+
+    &lt;label for=&quot;&quot;&gt;邮件：&lt;/label&gt;
+    &lt;!--自带了验证邮件格式是否正确  --&gt;
+    &lt;!-- &lt;input type=&quot;email&quot; required&gt; --&gt;
+
+    &lt;label for=&quot;&quot;&gt;网址：&lt;/label&gt;
+    &lt;!-- 自带了网址验证是否正确，http://xxxx.xxxx.xx  这个一般不用 --&gt;
+    &lt;!-- &lt;input type=&quot;url&quot; required&gt; --&gt;
+
+    &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+    var telDom = document.getElementsByTagName(&#39;input&#39;)[0];
+    telDom.oninvalid = function () {
+        // console.log(&#39;验证失败会触发&#39;);  
+        telDom.setCustomValidity(&#39;请输入11位数字&#39;);
+    }
+&lt;/script&gt;
+</code></pre><hr>
+<h3 id="input-">input中新增的滑块</h3>
+<p><code>output其实跟span没什么区别，只是比span更具备语义</code></p>
+<pre><code>&lt;input type=&quot;range&quot; max=&quot;10&quot; min=&#39;2&#39; value=&quot;3&quot;&gt;    
+&lt;output id=&#39;out&#39;&gt;3&lt;/output&gt;
+</code></pre><p><code>input的js滑动事件方法 onchange oninput</code></p>
+<pre><code>&lt;script&gt;
+// 找到滑块元素
+var rangeDom = document.getElementsByTagName(&#39;input&#39;)[0];
+// 找到output元素
+var outDom = document.getElementById(&#39;out&#39;);
+
+// 当值改变触发 对于滑块来说，它是松手以后才触发
+rangeDom.onchange = function () {
+    console.log(&#39;我变了&#39;);
+}
+
+// 当获得用户输入时触发
+// 对于滑块来说，它是在滑动时就触发
+rangeDom.oninput = function () {
+    // console.log(&#39;我获得你输了的东西&#39;);
+
+    // 获取滑块正在滑动的值
+    var value = this.value;
+    // 把获取到的值赋值给output的内容
+    outDom.innerHTML = value;
+}
+&lt;/script&gt;
+</code></pre><hr>
+<h3 id="h5-">H5进度条</h3>
+<p>progress meter 这两个进度条，IE9以后才支持progress  </p>
+<pre><code>&lt;!--默认最大值是1，最小值是0  --&gt;
+&lt;progress value=&quot;50&quot; max=100 min=10&gt;&lt;/progress&gt;
+
+&lt;!--默认最大值是1，最小值是0 ,ie完全不支持  --&gt;
+&lt;meter value=&quot;.5&quot;&gt;&lt;/meter&gt;    
+</code></pre><hr>
+<h3 id="h5-js-">H5新增js选择器</h3>
+<p><code>querySelector querySelectorAll</code></p>
+<pre><code>// 任何css选择器(包括C3新增的选择器)都可以写，跟css找到元素的效果一样
+// 用querySelector来找元素，不管你传的是选择器，它只会返回匹配条件的第一个
+var dom1 = document.querySelector(&#39;li&#39;);
+
+console.log(dom1);
+
+var dom2 = document.querySelector(&#39;#whiteface&#39;);
+
+console.log(dom2);
+
+var dom3 = document.querySelector(&#39;.dysx&#39;);
+
+console.log(dom3);
+
+// 只要你是用querySelectorAll方法，哪怕只找到一个元素，它返回的也是一个数组
+var domList = document.querySelectorAll(&#39;li&#39;);
+console.log(domList);
+
+var domList2 = document.querySelectorAll(&#39;#whiteface&#39;);
+console.log(domList2);
+</code></pre><hr>
+<h3 id="h5-class-">H5新增操作元素的class方法</h3>
+<p><code>classList.add classList.remove classList.toggle</code></p>
+<pre><code>&lt;body&gt;
+    &lt;input type=&quot;button&quot; value=&quot;显示&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;隐藏&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;切换&quot;&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;script&gt;
+var divDom = document.querySelector(&#39;.box&#39;);
+
+// 给第一个button加点击事件
+document.querySelector(&#39;input&#39;).onclick = function () {
+    divDom.classList.add(&#39;color&#39;);
+};
+
+document.querySelectorAll(&#39;input&#39;)[1].onclick = function () {
+    divDom.classList.remove(&#39;color&#39;);
+}
+
+document.querySelectorAll(&#39;input&#39;)[2].onclick = function () {
+    // 如果有color这个类就删除color这个类
+    // 如果没有color这个类就加上color这个类
+    divDom.classList.toggle(&#39;color&#39;);
+}
+
+// h5新增的属性classList
+// console.log(divDom.classList);
+
+// console.log(divDom.className);
+
+// divDom.className = divDom.className + &quot; &quot; + &#39;test&#39;;
+</code></pre><p></script></p>
+<hr>
+<h3 id="html5-">HTML5卫星定位</h3>
+<p><code>window.navigator.geolocation.getCurrentPosition(function (loc) {}</code></p>
+<pre><code>&lt;body&gt;
+    &lt;input type=&quot;button&quot; value=&quot;点我定位&quot;&gt;
+&lt;/body&gt;
+
+&lt;script&gt;
+document.querySelector(&#39;input&#39;).onclick = function () {
+    // 通过此方法可以去服务器请求自己的位置
+    // 定位有两个条件：1.要么有GPS模块，连接上卫星定位（最精确）
+    // 2.联网，通过你的网络ip去查询服务器上的地址（不太精确）
+    // 当获取到位置成功后就会调用的函数，这个函数你要参数传进去
+    // 获取到的位置信息会当作参数传给这个回调函数
+    window.navigator.geolocation.getCurrentPosition(function (loc) {
+        console.log(&#39;您所在的位置纬度是：&#39; + loc.coords.latitude + &#39;经度是：&#39;, +loc.coords.longitude);
+    })
+}
+&lt;/script&gt;
+</code></pre><hr>
+<h3 id="html-">HTML数据存储</h3>
+<p><code>localStorage sessionStorage</code></p>
+<pre><code>localStorage 用来存储数据，特点：只要自己不删永远都在
+        setItem(&#39;key&#39;,值);  这是存储
+        getItem(&#39;key&#39;); 这是取值
+        removeItem(&#39;key&#39;);这是删除某个值  
+
+sessionStorage 也是存储数据，但是会自动删除，用法跟上面的完全一样
+
+localStorage 只要自己不删，它一直都在
+sessionStorage 是一次性的，会自动删除，一次会话结束后就删了：关掉浏览器就没了 
+</code></pre><p>例如：</p>
+<pre><code>&lt;body&gt;
+    &lt;input type=&quot;text&quot;&gt;
+    &lt;button&gt;存储&lt;/button&gt;
+    &lt;button id=&#39;del&#39;&gt;删除&lt;/button&gt;
+&lt;/body&gt;
+
+&lt;script&gt;
+    document.querySelector(&#39;button&#39;).onclick = function () {
+        // 要拿到文本框，然后才能它里面的值
+        var value = document.querySelector(&#39;input&#39;).value;
+        // 存储起来
+        // window.localStorage.setItem(&#39;name&#39;, value);
+        window.sessionStorage.setItem(&#39;name&#39;, value);
+    };
+
+    document.querySelector(&#39;#del&#39;).onclick = function () {
+        localStorage.removeItem(&#39;name&#39;);
+    };
+
+    window.onload = function () {
+        // 从本地取值
+        // var value = window.localStorage.getItem(&#39;name&#39;);
+        var value = window.sessionStorage.getItem(&#39;name&#39;);
+        // 再赋值给文本框
+        document.querySelector(&#39;input&#39;).value = value;
+    }
+&lt;/script&gt;   
+</code></pre><hr>
+<h3 id="html5-">HTML5元素拖拽</h3>
+<pre><code>有些元素默认不能拖，如果希望它有拖动效果
+就给它写个属性叫 draggable = &#39;true&#39;
+
+ondragstart 当元素开始拖拽触发
+ondrag   当元素正在拖拽触发
+ondragend 当元素停止拖拽触发
+
+ondrop 当某个容器检测到有元素移入并且松手后触发
+    但是要让这个事件触发，必须先实现这个容器的ondragover事件，并且这个事件需要一个event参数，再调用event.preventDefault()方法
+</code></pre><p>例如：</p>
+<pre><code>&lt;body&gt;
+    &lt;!--元素不是你想拖，想拖就能拖，让我写个属性draggable  --&gt;
+    &lt;img src=&quot;img/shq.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;div class=&quot;box&quot; draggable=&quot;true&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;container&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;script&gt;
+var boxDom = document.querySelector(&#39;.box&#39;);
+// 当某个被拖拽的元素开始拖拽触发
+boxDom.ondragstart = function () {
+    console.log(&#39;你开始拖我了&#39;);
+}
+
+// 当某个被拖拽元素正在拖拽时触发
+boxDom.ondrag = function () {
+
+    console.log(&#39;你正在拖我&#39;);
+}
+
+// 当某个被拖拽元素结束拖拽（松手）时触发
+boxDom.ondragend = function () {
+    console.log(&#39;你不拖我了&#39;);
+}
+
+var containerDom = document.querySelector(&#39;.container&#39;);
+
+// 检测我这个容器有没有元素进来
+containerDom.ondragenter = function () {
+    console.log(&#39;有元素进来了&#39;);
+}
+
+// 检测我这个容器有没有元素出去
+containerDom.ondragleave = function () {
+    console.log(&#39;有元素离开了&#39;);
+}
+
+// 当有元素拖拽到容器里面并且松手后才触发
+// 但是这个事件使用之前必须先使用ondragover的事件，并且这个over事件必须接收参数，再调用参数的preventDefault()方法，否则这个事件永远不会触发
+containerDom.ondrop = function () {
+    // console.log(&#39;..................&#39;);
+    // 写死了，永远加的都是红色的盒子
+    this.appendChild(boxDom);
+}
+
+// 这个方法仅仅只是为了让ondrop事件能触发
+containerDom.ondragover = function (event) {
+    event.preventDefault();
+}
+&lt;/script&gt;                
+</code></pre>
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
